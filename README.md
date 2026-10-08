@@ -6,6 +6,11 @@ A growing collection of my Arduino and ESP32 sketches — practice code, small b
 
 ## Projects
 
+### 🤖 Mini Bot (ESP32 Bluetooth Car) — [`mini_bot/`](./mini_bot/)
+A compact Bluetooth-controlled robot on an ESP32 with a DRV8833 dual H-bridge. It hosts a Bluetooth serial interface (device name `ESP32_Car`) so you can drive it from a phone — forward / back / left / right / stop plus three speed levels. The power chain (2×18650 → AMS1117-3.3) and noise-filter circuits were hand-wired onto a perf board.
+
+Sketch: [`mini_bot.ino`](./mini_bot/mini_bot.ino) · Pin map: [`PIN_CONNECTIONS.md`](./mini_bot/PIN_CONNECTIONS.md) · Schematic: [`schematic.png`](./mini_bot/schematic.png)
+
 ### 🌦️ ESP32 Weather Monitor — [`esp32_weather_monitor/`](./esp32_weather_monitor/)
 An ESP32-C3 weather station on a 128×64 SSD1306 OLED:
 - **Indoor** temperature & humidity from a DHT22 sensor
@@ -36,6 +41,12 @@ Arduino_projects/
 ├── lcd_binary_counter/
 │   ├── lcd_binary_counter.ino
 │   └── wiring_diagram.png
+├── mini_bot/
+│   ├── mini_bot.ino
+│   ├── PIN_CONNECTIONS.md
+│   ├── README.md
+│   ├── schematic.html
+│   └── schematic.png
 ├── nodemcu_wifi_car/
 │   └── nodemcu_wifi_car.ino
 └── README.md
@@ -45,9 +56,11 @@ Arduino_projects/
 
 ## Hardware used
 
-- ESP32-C3 and ESP8266 NodeMCU
+- ESP32 DevKit and ESP32-C3, ESP8266 NodeMCU
+- DRV8833 dual H-bridge and L298N motor drivers
 - SSD1306 OLED (I2C) and a 16×2 LCD (parallel) with a contrast potentiometer
-- DHT22 sensor, L298N motor driver
+- DHT22 sensor
+- 2×18650 Li-ion pack with AMS1117-3.3 regulation (mini bot)
 
 ---
 
@@ -58,4 +71,4 @@ Each project is a self-contained Arduino sketch:
 1. Open the project's `.ino` file in the Arduino IDE.
 2. Install the libraries it lists in its `#include` lines (e.g. `Adafruit_SSD1306`, `DHT`, `ArduinoJson`, `ESP8266WiFi`, `LiquidCrystal`).
 3. Fill in your own Wi-Fi credentials and API keys where required before flashing.
-4. Select the right board (ESP32-C3 / ESP8266) and upload.
+4. Select the right board (ESP32 / ESP32-C3 / ESP8266) and upload.
