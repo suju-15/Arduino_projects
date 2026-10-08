@@ -2,8 +2,6 @@
 
 A compact, Bluetooth-controlled robot built around an **ESP32**, a **DRV8833** dual H-bridge, and a hand-wired power / noise-filter section on a prototype perf board. Drive it from any phone with a Bluetooth serial terminal.
 
-> *"Designed and developed a wireless bot using ESP32 SoC. Integrated microcontroller, motor driver (DRV8833) and power management and noise filter circuits into a compact prototype perf board. Used compact size motors to make the bot in smaller dimensions."*
-> — project write-up on LinkedIn
 
 ---
 
@@ -15,7 +13,7 @@ A compact, Bluetooth-controlled robot built around an **ESP32**, a **DRV8833** d
 - **Common-anode RGB status LED** — red = waiting for connection, green = connected/idle, blue = moving
 - **On-board power chain** — 2 × 18650 (≈7.4 V) → AMS1117-3.3 → single 3.3 V rail, with input/output decoupling
 - **Reset circuit + UART/boot header** for reliable flashing
-- Compact footprint: small DC gear motors and a single perf-board build
+- Compact footprint: small DC gear motors (N20) and a single perf-board build
 
 ---
 
